@@ -76,7 +76,9 @@ object Main extends App {
   println(machineHistories)
 
   // 解析して出力
-  val differenceMedalsByModel = machineHistories.groupBy(_.machineName).mapValues(_.foldLeft(0)(_ + _.differenceMedal))
+  val differenceMedalsByModel = machineHistories
+    .groupBy(_.machineName)
+    .mapValues(_.foldLeft(0)(_ + _.differenceMedal))
   println(differenceMedalsByModel)
 
   println("End.")
